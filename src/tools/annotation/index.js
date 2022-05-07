@@ -5,6 +5,8 @@ import CircleRoiTool from './CircleRoiTool.js';
 import CobbAngleTool from './CobbAngleTool.js';
 import EllipticalRoiTool from './EllipticalRoiTool.js';
 import FreehandRoiTool from './FreehandRoiTool.js';
+import FreehandRoi2Tool from './FreehandRoi2Tool.js';
+
 import LengthTool from './LengthTool.js';
 import ProbeTool from './ProbeTool.js';
 import RectangleRoiTool from './RectangleRoiTool.js';
@@ -18,6 +20,7 @@ export { default as CircleRoiTool } from './CircleRoiTool.js';
 export { default as CobbAngleTool } from './CobbAngleTool.js';
 export { default as EllipticalRoiTool } from './EllipticalRoiTool.js';
 export { default as FreehandRoiTool } from './FreehandRoiTool.js';
+export { default as FreehandRoi2Tool } from './FreehandRoi2Tool.js';
 export { default as LengthTool } from './LengthTool.js';
 export { default as ProbeTool } from './ProbeTool.js';
 export { default as RectangleRoiTool } from './RectangleRoiTool.js';
@@ -32,6 +35,7 @@ export default {
   CobbAngleTool,
   EllipticalRoiTool,
   FreehandRoiTool,
+  FreehandRoi2Tool,
   LengthTool,
   ProbeTool,
   RectangleRoiTool,
