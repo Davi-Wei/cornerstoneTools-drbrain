@@ -28,6 +28,7 @@
       <ul class="tool-category active" data-tool-category="brush">
         <li><a href="#" data-tool="Brush">Brush</a></li>
         <li><a href="#" data-tool="SphericalBrush">SphericalBrush</a></li>
+        <li><a href="#" data-tool="Probe">Probe</a></li>
       </ul>
 
       <ul class="tool-category" data-tool-category="scissors">
@@ -488,16 +489,11 @@
           );
 
           if (result) {
-            statsLabel.innerHTML = `vol: ${
-              Math.round(result.volume)
-              } mm, mean: ${
-              Math.round(result.mean)
-              }, stdDev: ${
-              Math.round(result.stdDev)
-              }, min: ${
-              Math.round(result.min)
-              }, max: ${
-              Math.round(result.max)
+            statsLabel.innerHTML = `vol: ${Math.round(result.volume)
+              } mm, mean: ${Math.round(result.mean)
+              }, stdDev: ${Math.round(result.stdDev)
+              }, min: ${Math.round(result.min)
+              }, max: ${Math.round(result.max)
               }`;
 
           } else {

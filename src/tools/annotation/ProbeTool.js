@@ -44,6 +44,9 @@ export default class ProbeTool extends BaseAnnotationTool {
   }
 
   createNewMeasurement(eventData) {
+    const { element } = eventData;
+    const stackState = getToolState(element, 'stack');
+    const { currentImageIdIndex } = stackState.data[0];
     const goodEventData =
       eventData && eventData.currentPoints && eventData.currentPoints.image;
 
@@ -64,6 +67,7 @@ export default class ProbeTool extends BaseAnnotationTool {
         end: {
           x: eventData.currentPoints.image.x,
           y: eventData.currentPoints.image.y,
+          z: currentImageIdIndex,
           highlight: true,
           active: true,
         },
