@@ -46,7 +46,6 @@ export default class ProbeTool extends BaseAnnotationTool {
   createNewMeasurement(eventData) {
     const { element } = eventData;
     const stackState = getToolState(element, 'stack');
-    const { currentImageIdIndex } = stackState.data[0];
     const goodEventData =
       eventData && eventData.currentPoints && eventData.currentPoints.image;
 
@@ -67,7 +66,7 @@ export default class ProbeTool extends BaseAnnotationTool {
         end: {
           x: eventData.currentPoints.image.x,
           y: eventData.currentPoints.image.y,
-          z: currentImageIdIndex,
+          z: stackState ? stackState.data[0].currentImageIdIndex : 0,
           highlight: true,
           active: true,
         },
@@ -172,17 +171,15 @@ export default class ProbeTool extends BaseAnnotationTool {
         }
 
         // Update textbox stats
-        if (data.invalidated === true) {
-          if (data.cachedStats) {
-            this.throttledUpdateCachedStats(image, element, data);
-          } else {
-            this.updateCachedStats(image, element, data);
-          }
+        if (data.cachedStats) {
+          this.throttledUpdateCachedStats(image, element, data);
+        } else {
+          this.updateCachedStats(image, element, data);
         }
 
         let text, str;
 
-        const { x, y, storedPixels, sp, mo, suv } = data.cachedStats;
+        const { x, y, storedPixels, suv } = data.cachedStats;
 
         if (x >= 0 && y >= 0 && x < image.columns && y < image.rows) {
           text = `${x}, ${y}`;
@@ -193,7 +190,8 @@ export default class ProbeTool extends BaseAnnotationTool {
             }`;
           } else {
             // Draw text
-            str = `SP: ${sp} MO: ${parseFloat(mo.toFixed(3))}`;
+            str = '';
+            // str = `SP: ${sp} MO: ${parseFloat(mo.toFixed(3))}`;
             if (suv) {
               str += ` SUV: ${parseFloat(suv.toFixed(3))}`;
             }
