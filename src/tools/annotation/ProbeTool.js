@@ -66,7 +66,7 @@ export default class ProbeTool extends BaseAnnotationTool {
         end: {
           x: eventData.currentPoints.image.x,
           y: eventData.currentPoints.image.y,
-          z: stackState ? stackState.data[0].currentImageIdIndex : 0,
+          z: stackState ? stackState.data[0].currentImageIdIndex + 1 : 0,
           highlight: true,
           active: true,
         },
