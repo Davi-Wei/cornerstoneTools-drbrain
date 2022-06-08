@@ -282,19 +282,20 @@ export default class EllipticalRoiTool extends BaseAnnotationTool {
         );
 
         data.unit = _getUnit(modality, this.configuration.showHounsfieldUnits);
-
-        drawLinkedTextBox(
-          context,
-          element,
-          data.handles.textBox,
-          textBoxContent,
-          data.handles,
-          textBoxAnchorPoints,
-          color,
-          lineWidth,
-          10,
-          true
-        );
+        if (!data.hideTextBox) {
+          drawLinkedTextBox(
+            context,
+            element,
+            data.handles.textBox,
+            textBoxContent,
+            data.handles,
+            textBoxAnchorPoints,
+            color,
+            lineWidth,
+            10,
+            true
+          );
+        }
       }
     });
   }
