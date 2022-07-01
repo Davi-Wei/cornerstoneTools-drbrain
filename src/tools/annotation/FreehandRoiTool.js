@@ -89,6 +89,8 @@ export default class FreehandRoiTool extends BaseAnnotationTool {
   }
 
   createNewMeasurement(eventData) {
+    const { element } = eventData;
+    const stackState = getToolState(element, 'stack');
     const goodEventData =
       eventData && eventData.currentPoints && eventData.currentPoints.image;
 
@@ -108,6 +110,7 @@ export default class FreehandRoiTool extends BaseAnnotationTool {
       handles: {
         points: [],
       },
+      imgIndex: stackState ? stackState.data[0].currentImageIdIndex + 1 : 0,
     };
 
     measurementData.handles.textBox = {
