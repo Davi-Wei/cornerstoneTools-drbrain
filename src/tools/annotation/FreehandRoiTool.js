@@ -507,12 +507,12 @@ export default class FreehandRoiTool extends BaseAnnotationTool {
     }
 
     function textBoxText(data) {
-      const { meanStdDev, meanStdDevSUV, area } = data;
+      const { meanStdDev, meanStdDevSUV, area, showAreaOlny } = data;
       // Define an array to store the rows of text for the textbox
       const textLines = [];
 
       // If the mean and standard deviation values are present, display them
-      if (meanStdDev && meanStdDev.mean !== undefined) {
+      if (!showAreaOlny && meanStdDev && meanStdDev.mean !== undefined) {
         // If the modality is CT, add HU to denote Hounsfield Units
         let moSuffix = '';
 
