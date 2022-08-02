@@ -1,6 +1,6 @@
 {
   "name": "cornerstone-tools2-drbrain",
-  "version": "5.1.15",
+  "version": "5.1.17",
   "description": "Medical imaging tools for the Cornerstone library",
   "main": "./dist/cornerstoneTools.js",
   "keywords": [

@@ -250,29 +250,35 @@ export default class RectangleRoiTool extends BaseAnnotationTool {
 
         const textBoxAnchorPoints = handles =>
           _findTextBoxAnchorPoints(handles.start, handles.end);
-        const textBoxContent = _createTextBoxContent(
-          context,
-          image.color,
-          data.cachedStats,
-          modality,
-          hasPixelSpacing,
-          this.configuration
-        );
 
-        data.unit = _getUnit(modality, this.configuration.showHounsfieldUnits);
+        if (!data.showLinkedTextBoxNot) {
+          const textBoxContent = _createTextBoxContent(
+            context,
+            image.color,
+            data.cachedStats,
+            modality,
+            hasPixelSpacing,
+            this.configuration
+          );
 
-        drawLinkedTextBox(
-          context,
-          element,
-          data.handles.textBox,
-          textBoxContent,
-          data.handles,
-          textBoxAnchorPoints,
-          color,
-          lineWidth,
-          10,
-          true
-        );
+          data.unit = _getUnit(
+            modality,
+            this.configuration.showHounsfieldUnits
+          );
+
+          drawLinkedTextBox(
+            context,
+            element,
+            data.handles.textBox,
+            textBoxContent,
+            data.handles,
+            textBoxAnchorPoints,
+            color,
+            lineWidth,
+            10,
+            true
+          );
+        }
       }
     });
   }
