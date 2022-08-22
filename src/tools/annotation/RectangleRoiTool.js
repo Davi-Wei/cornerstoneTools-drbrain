@@ -168,7 +168,7 @@ export default class RectangleRoiTool extends BaseAnnotationTool {
 
     const eventData = evt.detail;
     const { image, element } = eventData;
-    const lineWidth = toolStyle.getToolWidth();
+    let lineWidth = toolStyle.getToolWidth();
     const lineDash = getModule('globalConfiguration').configuration.lineDash;
     const {
       handleRadius,
@@ -265,6 +265,10 @@ export default class RectangleRoiTool extends BaseAnnotationTool {
             modality,
             this.configuration.showHounsfieldUnits
           );
+          console.log('RectangleRoiTool data=', data);
+          if (data.aiType == 'Angioma') {
+            lineWidth = 2;
+          }
 
           drawLinkedTextBox(
             context,
