@@ -181,6 +181,10 @@ export default class ArrowAnnotateTool extends BaseAnnotationTool {
           drawHandles(context, evt.detail, data.handles, handleOptions);
         }
 
+        if (data.description == 'CPR' || data.description == 'DPR') {
+          return;
+        }
+
         const text = textBoxText(data);
 
         // Draw the text
