@@ -4,6 +4,7 @@ import BidirectionalTool from './BidirectionalTool.js';
 import CircleRoiTool from './CircleRoiTool.js';
 import CobbAngleTool from './CobbAngleTool.js';
 import EllipticalRoiTool from './EllipticalRoiTool.js';
+import EllipticalRoi2Tool from './EllipticalRoiTool.js';
 import FreehandRoiTool from './FreehandRoiTool.js';
 import FreehandRoi2Tool from './FreehandRoi2Tool.js';
 
@@ -19,6 +20,7 @@ export { default as BidirectionalTool } from './BidirectionalTool.js';
 export { default as CircleRoiTool } from './CircleRoiTool.js';
 export { default as CobbAngleTool } from './CobbAngleTool.js';
 export { default as EllipticalRoiTool } from './EllipticalRoiTool.js';
+export { default as EllipticalRoi2Tool } from './EllipticalRoi2Tool.js';
 export { default as FreehandRoiTool } from './FreehandRoiTool.js';
 export { default as FreehandRoi2Tool } from './FreehandRoi2Tool.js';
 export { default as LengthTool } from './LengthTool.js';
@@ -34,6 +36,7 @@ export default {
   CircleRoiTool,
   CobbAngleTool,
   EllipticalRoiTool,
+  EllipticalRoi2Tool,
   FreehandRoiTool,
   FreehandRoi2Tool,
   LengthTool,
