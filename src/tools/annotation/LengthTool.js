@@ -48,6 +48,8 @@ export default class LengthTool extends BaseAnnotationTool {
   }
 
   createNewMeasurement(eventData) {
+    const { element } = eventData;
+    const stackState = getToolState(element, 'stack');
     const goodEventData =
       eventData && eventData.currentPoints && eventData.currentPoints.image;
 
@@ -88,6 +90,7 @@ export default class LengthTool extends BaseAnnotationTool {
           hasBoundingBox: true,
         },
       },
+      imgIndex: stackState ? stackState.data[0].currentImageIdIndex + 1 : 0,
     };
   }
 
@@ -148,7 +151,6 @@ export default class LengthTool extends BaseAnnotationTool {
       renderDashed,
     } = this.configuration;
     const toolData = getToolState(evt.currentTarget, this.name);
-
     if (!toolData) {
       return;
     }

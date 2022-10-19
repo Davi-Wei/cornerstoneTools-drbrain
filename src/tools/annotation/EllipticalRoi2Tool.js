@@ -190,7 +190,6 @@ export default class EllipticalRoi2Tool extends BaseAnnotationTool {
   renderToolData(evt) {
     const toolData = getToolState(evt.currentTarget, this.name);
 
-    console.log('toolData=', toolData);
     if (!toolData) {
       return;
     }
