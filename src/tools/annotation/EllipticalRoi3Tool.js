@@ -31,21 +31,21 @@ import { getLogger } from '../../util/logger.js';
 import getPixelSpacing from '../../util/getPixelSpacing';
 import { getModule } from '../../store/index';
 
-const logger = getLogger('tools:annotation:EllipticalRoi2Tool');
+const logger = getLogger('tools:annotation:EllipticalRoi3Tool');
 
 /**
  * @public
- * @class EllipticalRoi2Tool
+ * @class EllipticalRoi3Tool
  * @memberof Tools.Annotation
  * @classdesc Tool for drawing elliptical regions of interest, and measuring
  * the statistics of the enclosed pixels.
  * @extends Tools.Base.BaseAnnotationTool
  */
-export default class EllipticalRoi2Tool extends BaseAnnotationTool {
+export default class EllipticalRoi3Tool extends BaseAnnotationTool {
   constructor(props = {}) {
     const defaultProps = {
-      name: 'EllipticalRoi2',
-      supportedInteractionTypes: ['Mouse', 'Touch'],
+      name: 'EllipticalRoi3',
+      supportedInteractionTypes: [],
       configuration: {
         // showMinMax: false,
         // showHounsfieldUnits: true,
