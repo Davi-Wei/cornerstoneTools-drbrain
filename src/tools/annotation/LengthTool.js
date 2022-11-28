@@ -151,6 +151,7 @@ export default class LengthTool extends BaseAnnotationTool {
       renderDashed,
     } = this.configuration;
     const toolData = getToolState(evt.currentTarget, this.name);
+
     if (!toolData) {
       return;
     }

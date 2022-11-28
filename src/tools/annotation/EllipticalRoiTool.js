@@ -249,7 +249,7 @@ export default class EllipticalRoiTool extends BaseAnnotationTool {
           'pixel',
           data.handles.initialRotation
         );
-        // drawHandles(context, eventData, data.handles, handleOptions);
+        // DrawHandles(context, eventData, data.handles, handleOptions);
 
         // Update textbox stats
         if (data.invalidated === true) {
