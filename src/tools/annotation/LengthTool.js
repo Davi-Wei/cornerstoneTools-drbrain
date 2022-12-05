@@ -35,7 +35,7 @@ export default class LengthTool extends BaseAnnotationTool {
       supportedInteractionTypes: ['Mouse', 'Touch'],
       svgCursor: lengthCursor,
       configuration: {
-        drawHandles: true,
+        drawHandles: false,
         drawHandlesOnHover: false,
         hideHandlesIfMoving: false,
         renderDashed: false,
